@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Franc Hakani</title>
+    <description></description>
+    <link>http://franc.hakani.info</link>
+    <atom:link href="http://franc.hakani.info/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Html5 Video test</title>
+        
+        
+          <description>&lt;video  preload=&#39;metadata&#39; controls &gt;&lt;source src=&#39;/assets/vid/kek2.mp4&#39; type=&#39;video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;&#39;&gt;&lt;/video&gt;
+</description>
+        
+        <pubDate>Mon, 28 Sep 2015 00:00:00 +0800</pubDate>
+        <link>http://franc.hakani.info/2015/html5-vid-test/</link>
+        <guid isPermaLink="true">http://franc.hakani.info/2015/html5-vid-test/</guid>
+      </item>
+    
+  </channel>
+</rss>
