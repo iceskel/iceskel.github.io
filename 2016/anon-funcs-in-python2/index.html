@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Franc Hakani - Anonymous Functions in Python 2</title>
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="My Blog" href="/rss.xml">
+</head>
+<body>
+
+  <nav class="main-nav">
+    
+        <a href="/"> <span class="arrow">←</span> Home </a>
+    
+
+    
+        
+    
+    <a class="cta" href="/feed.xml">Subscribe</a>
+</nav>
+
+  
+
+  <section id="wrapper" class="">
+    <article class="post">
+    <header>
+        <h1>Anonymous Functions in Python 2</h1>
+        <h2 class="headline">January 30, 2016</h2>
+    </header>
+    <section id="post-body">
+        <p>An anonymous function is a function that isn&#39;t bound by any name. Python provides a way to create anonymous functions by using the <code>lambda</code> keyword. It can also be used with other functions such as <code>map()</code> and <code>filter()</code>.</p>
+
+<p>A simple lambda function can be something that divides a number by 3.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">anonfunc</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">k</span> <span class="o">/</span> <span class="mi">3</span>
+<span class="k">print</span> <span class="s">"33 / 3 = "</span> <span class="o">+</span> <span class="n">anonfunc</span><span class="p">(</span><span class="mi">33</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;</span> <span class="mi">33</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">11</span></code></pre></figure>
+
+<p>Here we see that the lambda function is passed to a variable titled <code>anonfunc(k)</code>, with a single parameter defined as <code>k</code>. You could have a number of parameters as with a normal python function. Should also be noted that this lambda function isn&#39;t evaluated until <code>anonfunc(k)</code> is called.</p>
+
+<p>Let&#39;s see more lambda action. Say we want to iterate over a list, multiply each content by 2, and only show values that have an exact multiple of 3. </p>
+
+<p>This is how it is usually done the &quot;for loop&quot; way.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">nlist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="n">matchedlist</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nlist</span><span class="p">:</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">j</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">matchedlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">matchedlist</span>
+
+<span class="o">&gt;&gt;</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">90</span><span class="p">]</span></code></pre></figure>
+
+<p>And this uses lambdas with <code>filter()</code> and <code>map()</code>. </p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">nlist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+
+<span class="k">print</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">k</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">k</span><span class="p">:</span> <span class="n">k</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="n">nlist</span><span class="p">))</span>
+
+<span class="o">&gt;&gt;</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">90</span><span class="p">]</span></code></pre></figure>
+
+<p>As you can see, the lambda functions are being passed into the <code>filter()</code> and <code>map()</code> functions. The <code>map()</code> function takes each element of the list of numbers, applies the lambda function <code>k * 2</code>, and returns a list with the result. Next the <code>filter()</code> function applies the True or False lambda function <code>k % 3 == 0</code> to each element of the list returned by the <code>map()</code> function. A new list is then returned with each element found True.</p>
+
+    </section>
+</article>
+<footer id="post-meta" class="clearfix">
+    <a href="http://twitter.com/iceskel">
+        <img class="avatar" src="/assets/images/avatar.png">
+        <div>
+            <span class="dark">Franc Hakani</span>
+            <span></span>
+        </div>
+    </a>
+
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=http://franc.hakani.info/2016/anon-funcs-in-python2/ - Anonymous Functions in Python 2 by @iceskel"><span class="icon-twitter"> Tweet</span></a>
+
+    </section>
+</footer>
+
+<!-- Disqus comments -->
+
+
+<!-- Archive post list -->
+
+
+
+
+
+  </section>
+
+
+  <link rel="stylesheet" href="/assets/css/highlight.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
+
+
+

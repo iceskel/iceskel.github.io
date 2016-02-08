@@ -7,15 +7,15 @@
     <atom:link href="http://franc.hakani.info/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Html5 Video test</title>
+        <title>Anonymous Functions in Python 2</title>
         
         
-          <description>&lt;video  preload=&#39;metadata&#39; controls &gt;&lt;source src=&#39;/assets/vid/kek2.mp4&#39; type=&#39;video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;&#39;&gt;&lt;/video&gt;
+          <description>&lt;p&gt;An anonymous function is a function that isn&amp;#39;t bound by any name. Python provides a way to create anonymous functions by using the &lt;code&gt;lambda&lt;/code&gt; keyword. It can also be used with other functions such as &lt;code&gt;map()&lt;/code&gt; and &lt;code&gt;filter()&lt;/code&gt;.&lt;/p&gt;
 </description>
         
-        <pubDate>Mon, 28 Sep 2015 00:00:00 +0800</pubDate>
-        <link>http://franc.hakani.info/2015/html5-vid-test/</link>
-        <guid isPermaLink="true">http://franc.hakani.info/2015/html5-vid-test/</guid>
+        <pubDate>Sat, 30 Jan 2016 00:00:00 +0800</pubDate>
+        <link>http://franc.hakani.info/2016/anon-funcs-in-python2/</link>
+        <guid isPermaLink="true">http://franc.hakani.info/2016/anon-funcs-in-python2/</guid>
       </item>
     
   </channel>
