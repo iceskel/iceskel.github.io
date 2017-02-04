@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Franc Hakani - Haskell, Spacemacs & Intero</title>
+  <link rel="shortcut icon" href="/assets/images/favicon.ico">
+  <link rel="alternate" type="application/rss+xml" title="My Blog" href="/rss.xml">
+</head>
+<body>
+
+  <nav class="main-nav">
+    
+        <a href="/"> <span class="arrow">←</span> Home </a>
+    
+
+    
+        
+    
+    <a class="cta" href="/feed.xml">Subscribe</a>
+</nav>
+
+  
+
+  <section id="wrapper" class="">
+    <article class="post">
+    <header>
+        <h1>Haskell, Spacemacs & Intero</h1>
+        <h2 class="headline">February 4, 2017</h2>
+    </header>
+    <section id="post-body">
+        <p>Oh and Stack. This is a quick guide on setting up a simple Haskell development environment. 
+<h3>Stack</h3>
+First download and install <a href="https://docs.haskellstack.org/en/stable/README">Stack</a>. Make sure to keep the default recommendations during the install. Then go to your home directory and type in your terminal</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">stack</span> <span class="k">new</span> <span class="nx">myproj</span>
+<span class="o">&gt;</span> <span class="nx">cd</span> <span class="nx">myproj</span></code></pre></div>
+
+<p>Stack&#39;s LTS resolver usually lags a bit behind ghc development, currently at 8.0.2 vs Stack LTS&#39;s 8.0.1. So to get 8.0.2 you simply open stack.yaml in your project directory and edit Selected resolver to be &quot;nightly-2017-02-03&quot; or whatever the current <a href="https://www.stackage.org/snapshots">snapshot</a>. Then type the following in your terminal while still inside the project directory</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&gt;</span> <span class="nx">stack</span> <span class="nx">setup</span>
+<span class="o">&gt;</span> <span class="nx">git</span> <span class="nx">init</span></code></pre></div>
+
+<p>It might take a couple of minutes or so depending on your internet connection. 
+<h3>Spacemacs</h3>
+Now to the chosen editor, <a href="https://github.com/syl20bnr/spacemacs">Spacemacs</a>. It&#39;s essentially Emacs evil mode with nice defaults and is very customisable. Follow the instructions to install Emacs and Spacemacs <a href="https://github.com/syl20bnr/spacemacs#prerequisites">here</a> for your current OS. Don&#39;t worry if it looks ugly for now 😜.</p>
+
+<h3>Intero</h3>
+
+<p><a href="https://commercialhaskell.github.io/intero/">Intero</a> is a package for Emacs that provides awesome stuff like jump to definition, type identifier, etcetera. To install simply open your .spacemacs file in your home directory and append</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="nx">haskell</span> <span class="p">:</span><span class="nx">variables</span> <span class="nx">haskell</span><span class="o">-</span><span class="nx">completion</span><span class="o">-</span><span class="nx">backend</span> <span class="err">'</span><span class="nx">intero</span><span class="p">)</span></code></pre></div>
+
+<p>to dotspacemacs-configuration-layers. Then reload with SPC f e R while still in Spacemacs. Next open your previously built stack project and open app/Main.hs</p>
+
+<p>Annnd done! 🎉</p>
+
+    </section>
+</article>
+<footer id="post-meta" class="clearfix">
+    <a href="http://twitter.com/iceskel">
+        <img class="avatar" src="/assets/images/avatar.png">
+        <div>
+            <span class="dark">Franc Hakani</span>
+            <span></span>
+        </div>
+    </a>
+
+    <section id="sharing">
+        <a class="twitter" href="https://twitter.com/intent/tweet?text=https://franc.ws/2017/haskell-spacemacs-intero/ - Haskell, Spacemacs & Intero by @iceskel"><span class="icon-twitter"> Tweet</span></a>
+
+    </section>
+</footer>
+
+<!-- Disqus comments -->
+
+
+<!-- Archive post list -->
+
+    <ul id="post-list" class="archive readmore">
+        <h3>Read more</h3>
+        
+            <li>
+                <a href="/2017/haskell-spacemacs-intero/">Haskell, Spacemacs & Intero<aside class="dates">Feb 04</aside></a>
+            </li>
+        
+            <li>
+                <a href="/2016/anon-funcs-in-python2/">Anonymous Functions in Python 2<aside class="dates">Jan 30</aside></a>
+            </li>
+        
+    </ul>
+
+
+
+
+
+  </section>
+
+
+  <link rel="stylesheet" href="/assets/css/highlight.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
+
+
+
